@@ -13,14 +13,14 @@ class NewsListPage extends StatefulWidget {
 class _NewsListPageState extends State<NewsListPage> {
   final NewsDataSource newsDataSource = NewsDataSource();
 
-  /// Тут створюється екземпляр класу NewsDataSource.
+    /// Тут створюється екземпляр класу NewsDataSource.
 
   late Future<List<NewsModel>> futureNews;
 
-  /// Це оголошення змінної futureNews, яка буде містити об'єкт Future,
-  /// що повертає список новин (List<NewsModel>). Ключове слово late вказує,
-  /// що ініціалізація цієї змінної відбудеться пізніше, а не в момент
-  /// створення екземпляра класу.
+    /// Це оголошення змінної futureNews, яка буде містити об'єкт Future,
+    /// що повертає список новин (List<NewsModel>). Ключове слово late вказує,
+    /// що ініціалізація цієї змінної відбудеться пізніше, а не в момент
+    /// створення екземпляра класу.
 
   @override
   void initState() {
@@ -40,12 +40,12 @@ class _NewsListPageState extends State<NewsListPage> {
         title: const Text('News'),
       ),
       body: FutureBuilder(
-        /// FutureBuilder будує віджет в залежності від результату Future.
+            /// FutureBuilder будує віджет в залежності від результату Future.
         future: futureNews,
         builder: (context, snapshot) {
-          /// builder: (context, snapshot) -  функція, яка будує віджет на основі поточного стану Future.
-          /// Вона приймає два параметри: context (контекст віджета) та snapshot
-          /// (знімок поточного стану Future).
+            /// builder: (context, snapshot) -  функція, яка будує віджет на основі поточного стану Future.
+            /// Вона приймає два параметри: context (контекст віджета) та snapshot
+            /// (знімок поточного стану Future).
 
           if (snapshot.connectionState == ConnectionState.waiting) {
             /// Тут ми перевіряємо стан з'єднання знімка (snapshot). Якщо connectionState
